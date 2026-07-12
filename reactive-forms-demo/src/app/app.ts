@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {ReactiveFormsModule,FormControl} from '@angular/forms'
+import {ReactiveFormsModule,FormControl, FormGroup} from '@angular/forms'
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet,ReactiveFormsModule],
@@ -9,8 +10,11 @@ import {ReactiveFormsModule,FormControl} from '@angular/forms'
 })
 export class App {
   protected readonly title = signal('reactive-forms-demo');
-  name=new FormControl('Shivansh lavaniya')
+  profileForm=new FormGroup({
+    name:new FormControl('Shivansh Lavaniya'),
+    email:new FormControl('shivansh@email.com')
+  })
   constructor(){
-    console.log(this.name.value);
+    console.log(this.profileForm.value)
   }
 }

@@ -1,2 +1,11 @@
-<input type="text" [formControl]="name">
-<p>{{name.value}}</p>
+<form [formGroup]="profileForm">
+  <input type="text" formControlName="name">
+  <br>
+  <input type="text" formControlName="email">
+</form>
+<p>
+  Name: {{profileForm.get('name')?.value}}
+</p>
+<p>
+  Email: {{profileForm.get('email')?.value}}
+</p>
