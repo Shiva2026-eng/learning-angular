@@ -1,1 +1,15 @@
-<p>categories works!</p>
+@if (product_service.loading()) {
+  <p>Loading...</p>
+} @else if (product_service.error()) {
+  <p>Error occured in fetching the categories</p>
+} @else {
+  <div class="list">
+    @for (category of categories(); track category.name) {
+      @if (category.name.split(' ').length == 1) {
+        <button (click)="printCategory(category.name)">
+          <app-category-card [title]="category.name"></app-category-card>
+        </button>
+      }
+    }
+  </div>
+}

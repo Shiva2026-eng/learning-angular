@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { Home } from './home/home';
 import { About } from './about/about';
 import { Categories } from './categories/categories';
+import { ProductsComponent } from './components/products-component/products-component';
 export const routes: Routes = [
   { path: '', component: Home },
   {
@@ -11,5 +12,9 @@ export const routes: Routes = [
   {
     path: 'categories',
     component: Categories,
+  },
+  {
+    path: 'products/:category',
+    component: ProductsComponent,
   },
 ];

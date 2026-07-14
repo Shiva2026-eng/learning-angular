@@ -1,5 +1,5 @@
-<div class="grid">
-  @for (product of products(); track product.id) {
+<!-- <div class="grid">
+  @for (product of product_service.products(); track product.id) {
     <app-product-card
       [imageURL]="product.images[0]"
       [title]="product.title"
@@ -7,4 +7,22 @@
       [price]="product.price"
     ></app-product-card>
   }
-</div>
+</div> -->
+@if (product_service.loading()) {
+  <p>Loading</p>
+} @else if (product_service.error()) {
+  <p>There is an error</p>
+} @else if (product_service.products().length === 0) {
+  <p>No item found</p>
+} @else {
+  <div class="grid">
+    @for (product of product_service.products(); track product.id) {
+      <app-product-card
+        [imageURL]="product.images[0]"
+        [title]="product.title"
+        [description]="product.description"
+        [price]="product.price"
+      ></app-product-card>
+    }
+  </div>
+}
