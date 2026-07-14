@@ -1,0 +1,16 @@
+<header>
+  <a routerLink="/">
+    <h1>Products</h1>
+  </a>
+  <div class="search">
+    <form [formGroup]="productsForm" (ngSubmit)="searchProducts()">
+      <input type="text" placeholder="Search a product" formControlName="product_name" />
+      <button>Search</button>
+    </form>
+  </div>
+  <nav>
+    <a routerLink="/">Products</a>
+    <a routerLink="/categories">Categories</a>
+    <a routerLink="/about">About</a>
+  </nav>
+</header>
