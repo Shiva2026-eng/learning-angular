@@ -1,3 +1,10 @@
-@for (product of products(); track product.id) {
-  <p>{{ product.title }}</p>
-}
+<div class="grid">
+  @for (product of products(); track product.id) {
+    <app-product-card
+      [imageURL]="product.images[0]"
+      [title]="product.title"
+      [description]="product.description"
+      [price]="product.price"
+    ></app-product-card>
+  }
+</div>

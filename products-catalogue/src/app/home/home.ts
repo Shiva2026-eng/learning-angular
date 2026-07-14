@@ -1,8 +1,9 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { Productservice } from '../services/productservice';
+import { ProductCard } from '../components/product-card/product-card';
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [ProductCard],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
